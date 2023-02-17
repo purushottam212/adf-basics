@@ -14,7 +14,11 @@
 			],
 			"sinks": [
 				{
-					"name": "orderCache"
+					"dataset": {
+						"referenceName": "OrdersParquest",
+						"type": "DatasetReference"
+					},
+					"name": "ordersParquet"
 				}
 			],
 			"transformations": [],
@@ -28,13 +32,11 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> orders",
-				"orders sink(validateSchema: false,",
+				"orders sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     store: 'cache',",
-				"     format: 'inline',",
-				"     output: false,",
-				"     saveOrder: 1) ~> orderCache"
+				"     skipDuplicateMapOutputs: true) ~> ordersParquet"
 			]
 		}
 	}
