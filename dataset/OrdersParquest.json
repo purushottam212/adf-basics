@@ -1,0 +1,20 @@
+{
+	"name": "OrdersParquest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lscourseretail",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "retail_db/orders",
+				"container": "course-retail"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
