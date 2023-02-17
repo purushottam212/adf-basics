@@ -1,5 +1,5 @@
 {
-	"name": "DFFileFormatConvertor",
+	"name": "DFFileFormatConvertorOrders",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
